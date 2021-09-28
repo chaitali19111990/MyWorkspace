@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>Quiz</title>
+</head>
+<body>
+<h1>Quiz</h1>
+
+<!--
+<form name="Quizquestions" action="/result" method="post">
+    <p>Emerson innovation center has established in:</p>
+    <input type="radio" name="year" value="2003"> 2003<br>
+    <input type="radio" name="year" value="1997"> 1997<br>
+    <input type="radio" name="year" value="2008"> 2008
+    <br>
+    <p>Emerson innovation center located in:</p>
+    <input type="radio" name="city" value="Mumbai"> Mumbai<br>
+    <input type="radio" name="city" value="Pune"> Pune<br>
+    <input type="radio" name="city" value="Chennai"> Chennai
+    <br>
+    <input type="submit" value="Submit">
+    <p>{{ your_list_element }} </p>
+</form>-->
+
+<!--
+<form name="Quizquestions" action="/result" method="post">
+<p>1.{{DictQuestion1}}:</p>    
+{% for your_list_element in DictOptions1 %}
+<input type="radio" name="first" value="{{your_list_element}}"> {{your_list_element}}<br>      
+{% endfor %}
+<br>
+<p>2.{{DictQuestion2}}:</p>
+{% for your_list_element in DictOptions2 %}
+<input type="radio" name="second" value="{{your_list_element}}"> {{your_list_element}}<br>      
+{% endfor %}
+<input type="submit" value="Submit">
+</form>
+-->
+
+<form name="Quizquestions" action="/result" method="post">
+{% set myname = namespace(val=0) %}      
+{% for your_list_element in containerList %}
+    {% for k,v in your_list_element.items() %} 
+        {% if k == 'Question' -%}
+            <p>{{v}}:</p>
+        {% elif k == 'Options' -%}
+            {% for op in v %}              
+                <input type="radio" name="{{myname.val}}" value="{{op}}"> {{op}}<br>  
+            {% endfor %}
+            <br>  
+        {% endif %}
+    {% endfor %}
+    {% set myname.val = myname.val+1 %}          
+{% endfor %}
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
+
