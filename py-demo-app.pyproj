@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5745a720-4efe-47d3-a5ec-05de9aeef08e}</ProjectGuid>
+    <ProjectGuid>{6859457c-e4b6-4948-b21b-669f63df7215}</ProjectGuid>
     <ProjectHome />
     <StartupFile>Hello.py</StartupFile>
     <SearchPath />
@@ -32,10 +32,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Hello.py" />
-    <Compile Include="InputData\captureData.py" />
+    <Compile Include="Hello_1 - Copy.py" />
+    <Compile Include="InputDataFolder\capture.py" />
+    <Compile Include="InputDataFolder\__init__.py" />
+    <Compile Include="tests.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="InputData" />
+    <Folder Include="InputDataFolder" />
     <Folder Include="templates" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

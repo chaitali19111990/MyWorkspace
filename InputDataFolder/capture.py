@@ -38,6 +38,7 @@ class Capture():
         Dict.update({'Question':p2.values[p1][0]})
         Dict.update({'Options':p2.values[p1][1]})
         Dict.update({'Answer':p2.values[p1][2]})
+        print(Dict)
         return Dict
 
 
